@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VulScan - Web Vulnerability Assessment</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header" data-aos="fade-in">
+        <div class="logo-container">
+            <img src="path/to/vulcan-logo.png" alt="VulScan Logo" class="logo">
+            <h1>Welcome to <span>VulScan</span></h1>
+        </div>
+        <nav class="navigation">
+            <a href="about.html">About</a>
+            <a href="login.html">Login</a>
+            <div class="dropdown">
+                <button class="dropbtn">Services</button>
+                <div class="dropdown-content">
+                    <a href="vulnerable-website.html">Vulnerable Website Scanning</a>
+                    <a href="malicious-url.html">Malicious URL Detection</a>
+                    <a href="malware.html">Malware Detection</a>
+                </div>
+            </div>
+        </nav>
+        <p>Your one-stop solution for web vulnerability assessment, malware detection, and malicious URL scanning.</p>
+        <div class="button-group">
+            <button onclick="window.location.href='vulnerable-website.html'" class="animated-button">Scan Vulnerable Website</button>
+            <button onclick="window.location.href='malicious-url.html'" class="animated-button">Detect Malicious URLs</button>
+            <button onclick="window.location.href='malware.html'" class="animated-button">Scan for Malware</button>
+        </div>
+    </header>
+
+    <!-- Vulnerable Website Section -->
+    <section id="vulnerable-website-section" class="scroll-section">
+        <h2 data-aos="fade-right">Vulnerable Website Scanning</h2>
+        <div class="card" data-aos="fade-up">
+            <h3>Why Scan for Vulnerabilities?</h3>
+            <p>Vulnerabilities can lead to data breaches and loss of customer trust. Regular scans protect sensitive information and maintain a positive reputation.</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
+            <h3>OWASP Top 10 Vulnerabilities</h3>
+            <p>The OWASP Top 10 lists critical security risks like injection attacks, broken authentication, and sensitive data exposure, highlighting the need for vigilance in web security.</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
+            <h3>Why Choose VulScan?</h3>
+            <p>Our advanced scanning technology and dedicated support ensure vulnerabilities are detected and mitigated before they become threats.</p>
+        </div>
+        <div class="center-button">
+            <button onclick="window.location.href='vulnerable-website.html'" class="animated-button">Start Vulnerability Scan</button>
+        </div>
+    </section>
+
+    <!-- Malicious URL Detection Section -->
+    <section id="malicious-url-section" class="scroll-section">
+        <h2 data-aos="fade-right">Malicious URL Detection</h2>
+        <div class="half-card-container">
+            <div class="card half-card" data-aos="fade-up">
+                <h3>Why Detect Malicious URLs?</h3>
+                <p>Malicious URLs are often used in phishing scams. Identifying and blocking these threats protects users from data theft and financial loss.</p>
+            </div>
+            <div class="card half-card" data-aos="fade-up" data-aos-delay="100">
+                <h3>Why Choose VulScan?</h3>
+                <p>Our sophisticated algorithms detect and analyze URLs for malicious content in real-time, providing quick and accurate results.</p>
+            </div>
+        </div>
+        <div class="center-button">
+            <button onclick="window.location.href='malicious-url.html'" class="animated-button">Detect Malicious URLs</button>
+        </div>
+    </section>
+
+    <!-- Malware Detection Section -->
+    <section id="malware-section" class="scroll-section">
+        <h2 data-aos="fade-right">Malware Detection</h2>
+        <div class="half-card-container">
+            <div class="card half-card" data-aos="fade-up">
+                <h3>Why Scan for Malware?</h3>
+                <p>Malware compromises data integrity and endangers sensitive information. Scanning for malware mitigates these risks.</p>
+            </div>
+            <div class="card half-card" data-aos="fade-up" data-aos-delay="100">
+                <h3>Why Choose VulScan?</h3>
+                <p>VulScan’s advanced detection system identifies known threats quickly, ensuring your system remains secure.</p>
+            </div>
+        </div>
+       
+        <div class="center-button">
+            <button onclick="window.location.href='malware.html'" class="animated-button">Scan for Malware</button>
+        </div>
+    </section>
+
+    <!-- Become a Pro Section -->
+    <section id="become-pro-section" class="scroll-section">
+        <h2 data-aos="fade-right">Become a Pro</h2>
+        <div class="card" data-aos="fade-up">
+            <h3>Unlock Premium Features</h3>
+            <p>Upgrade to our Pro plan for access to advanced features including in-depth scanning, priority support, and more comprehensive reports.</p>
+            <div class="center-button">
+                <button onclick="window.location.href='pro.html'" class="animated-button">Go Pro</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Contact us at: <a href="mailto:vulcan@example.com">vulcan@example.com</a></p>
+        <p>&copy; 2024 VulScan. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
