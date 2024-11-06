@@ -1,0 +1,171 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #4d4d4d;
+    background-color: #f7f8fa;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 60px;
+    margin-right: 10px;
+}
+
+.navigation {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.navigation a {
+    color: #ecf0f1;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.navigation a:hover {
+    color: #e67e22;
+}
+
+header h1 {
+    font-size: 3em;
+}
+
+header h1 span {
+    color: #e67e22;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+.button-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.animated-button {
+    padding: 15px 30px;
+    font-size: 1.1em;
+    background-color: #e67e22;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.animated-button:hover {
+    background-color: #d35400;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Section Styling */
+.scroll-section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.scroll-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.center-button {
+    margin: 40px 0;
+}
+
+/* Dropdown Styling */
+.dropdown {
+    display: inline-block;
+    position: relative; /* Adjusted for proper positioning */
+}
+
+.dropbtn {
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 15px; /* Adjusted padding for a smaller button */
+    font-size: 14px; /* Smaller font size */
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    width: 200px; /* Fixed width to prevent overflow */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px; /* Adjusted padding for a smaller text area */
+    text-decoration: none;
+    display: block;
+    font-size: 14px; /* Smaller font size for dropdown items */
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #e67e22;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
