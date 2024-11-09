@@ -1,0 +1,157 @@
+/* General reset and style settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #4CAF50, #8BC34A);
+}
+
+.signup-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1000px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: slideIn 1s ease-out;
+}
+
+/* Left Side: Signup Form */
+.signup-form {
+    width: 50%;
+    padding: 40px;
+    animation: fadeInLeft 1s ease-in;
+}
+
+h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+form label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+/* Redirect to login section */
+.redirect-login {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.redirect-login a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.redirect-login a:hover {
+    color: #45a049;
+}
+
+/* Right Side: Information Card */
+.info-card {
+    width: 50%;
+    padding: 40px;
+    background-color: #fafafa;
+    border-left: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: fadeInRight 1s ease-in;
+    margin-top: 30px; /* Added margin to create space between the card and form */
+}
+
+.vulscan-title {
+    font-size: 36px;
+    color: #4CAF50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.info-card h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.info-card p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Animations */
+@keyframes slideIn {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes fadeInLeft {
+    0% { opacity: 0; transform: translateX(-50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+    0% { opacity: 0; transform: translateX(50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .signup-container {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .signup-form, .info-card {
+        width: 100%;
+    }
+}
