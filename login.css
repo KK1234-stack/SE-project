@@ -1,0 +1,231 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Left Section (Login Form) */
+.login-section {
+    width: 45%;
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.login-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.login-section span {
+    color: #00bcd4;
+}
+
+.form-header {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.auth-form .form-group {
+    margin-bottom: 20px;
+}
+
+.auth-form .form-group label {
+    font-size: 1rem;
+    color: #333;
+}
+
+.auth-form .form-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 8px;
+}
+
+.auth-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.auth-form button:hover {
+    background-color: #0097a7;
+}
+
+/* About Section */
+.about-section {
+    width: 45%;
+    padding: 40px;
+    background: #eeeeee;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.about-section h3 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.about-section p {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 15px;
+}
+
+.animated-button {
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: #00bcd4;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.animated-button:hover {
+    background-color: #0097a7;
+}
+
+/* Scrollable Content */
+.scrollable-content {
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.cards {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Premium Section */
+.premium-section {
+    margin-top: 40px;
+    text-align: center;
+    padding: 40px;
+    background-color: #00bcd4;
+    color: white;
+}
+
+.premium-card {
+    background-color: #0097a7;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.premium-btn {
+    padding: 12px 30px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.premium-btn:hover {
+    background-color: #45a049;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.socials a {
+    margin: 0 10px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.socials a:hover {
+    color: #00bcd4;
+}
+
+/* Scroll Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-in-left {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all 0.7s ease-in-out;
+}
+
+.slide-in-right {
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.7s ease-in-out;
+}
+
+.visible {
+    transform: translateX(0);
+    opacity: 1;
+}
