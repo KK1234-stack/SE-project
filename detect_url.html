@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        input[type="url"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Detect Malicious URL</h1>
+        <input type="url" id="url-input" placeholder="Enter URL to check" required>
+        <button onclick="checkURL()">Check URL</button>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function checkURL() {
+            const url = document.getElementById("url-input").value;
+
+            // Ensure the URL is not empty
+            if (!url) {
+                document.getElementById("result").innerText = "Please enter a valid URL.";
+                return;
+            }
+
+            // Prepare the data to be sent to the Flask backend
+            const data = {
+                url: url
+            };
+
+            // Send the request to Flask backend (API endpoint)
+            fetch('http://127.0.0.1:5000/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display the result from the API response
+                const prediction = data.prediction;
+                const resultText = (prediction === 1) ? "This URL is malicious!" : "This URL is safe.";
+                document.getElementById("result").innerText = resultText;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById("result").innerText = "An error occurred. Please try again.";
+            });
+        }
+    </script>
+
+</body>
+</html>
