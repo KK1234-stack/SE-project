@@ -183,16 +183,23 @@ input:focus {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+
+    .header .title{
+        left: 20%;
+    }
     .signup-container {
         flex-direction: column;
         width: 90%;
         top: 20%;
+        height: 800px;
+        padding: 20px;
+        background-color: rgb(221, 229, 217);
     }
 
     .signup-form, .info-card {
         width: 100%;
-    }
-    .header .title{
-        left: 20%;
+        height: 440px;
+        border-radius: 10px;
+        background-color: white;
     }
 }
