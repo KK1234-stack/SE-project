@@ -3,57 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup - VulScan</title>
+    <title>Signup</title>
     <link rel="stylesheet" href="signup.css">
 </head>
 <body>
-
-    <!-- Main container -->
     <div class="signup-container">
-
-        <!-- Left side: Signup Form -->
-        <div class="signup-form" data-aos="fade-right">
-            <h2>Create Your Account</h2>
-            <form id="signup-form" action="/signup" method="POST">
+        <!-- Left Side: Signup Form -->
+        <div class="signup-form">
+            <h2>Create an Account</h2>
+            <form id="signup-form" action="signup.php" method="POST">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>
-
+                
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
-
+                
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required>
-
-                <label for="confirm-password">Confirm Password</label>
-                <input type="password" id="confirm-password" name="confirm-password" required>
-
+                
                 <button type="submit" class="submit-btn">Sign Up</button>
             </form>
-            <p class="redirect-login">Already have an account? <a href="login.html">Login</a></p>
+            <div class="redirect-login">
+                <p>Already have an account? <a href="login.html">Login here</a></p>
+            </div>
         </div>
-
-        <!-- Right side: Information Card -->
-        <div class="info-card" data-aos="fade-left">
-            <h3 class="vulscan-title">VulScan</h3>
-            <h3>Why Scan for Vulnerabilities?</h3>
-            <p>Cyberattacks are a constant threat to websites. Vulnerabilities like SQL injection, cross-site scripting (XSS), and insecure APIs can lead to data breaches and loss of user trust. Regular vulnerability scans help identify and fix these issues before they are exploited.</p>
-            <p><strong>VulScan</strong> helps you detect vulnerabilities in your website to protect your users and maintain your reputation. With our advanced scanning tools, you can ensure your website is secure and up to date with the latest security standards.</p>
+        
+        <!-- Right Side: Information Card -->
+        <div class="info-card">
+            <div class="vulscan-title">
+                <h1>VulScan</h1>
+            </div>
+            <h3>Secure your website</h3>
+            <p>Join us today to protect your website from OWASP vulnerabilities, malware, and phishing attacks.</p>
         </div>
-
     </div>
-
-    <!-- AOS library for animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init();  // Initialize AOS (Animate on Scroll)
-
-        // Example of checking if user is already logged in
-        window.onload = function() {
-            const userLoggedIn = false; // Here, check with your actual logic (e.g., sessionStorage or cookie)
-            if (userLoggedIn) {
-                window.location.href = "login.html"; // Redirect to login if already logged in
-            }
-        }
-    </script>
 </body>
 </html>
