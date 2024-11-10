@@ -24,8 +24,10 @@ header {
 }
 
 .logo {
-    width: 60px;
+    width: 90px;
+    height: 90px;
     margin-right: 10px;
+    border-radius: 50%;
 }
 
 .navigation {
