@@ -1,48 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
     <link rel="stylesheet" href="signup.css">
 </head>
+
 <body>
-    <!-- Header Section -->
-    <div class="header">
-        <div class="title">
-            <h2>Welcome to <span>VulScan</span></h2>
-            <img src="vulscanlogo.png" alt="vulscan" class="logo">
-        </div>
-     </div>
-    <div class="signup-container">
-        <!-- Left Side: Signup Form -->
-        <div class="signup-form">
-            <h2>Create an Account</h2>
-            <form id="signup-form" action="signup.php" method="POST">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
-                
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-                
-                <button type="submit" class="submit-btn">Sign Up</button>
-            </form>
-            <div class="redirect-login">
-                <p>Already have an account? <a href="login.html">Login here</a></p>
+    <div class="main-box">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="title">
+                <h2>Welcome to <span>VulScan</span></h2>
+                <img src="weblogo.jpg" alt="vulscan" class="logo">
             </div>
         </div>
-        
-        <!-- Right Side: Information Card -->
-        <div class="info-card">
-            <div class="vulscan-title">
-                <h1>VulScan</h1>
+        <div class="signup-container">
+            <!-- Left Side: Signup Form -->
+            <div class="signup-form">
+                <h2>Create an Account</h2>
+                <form id="signup-form" action="signup.php" method="POST">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <button type="submit" class="submit-btn">Sign Up</button>
+                </form>
+                <div class="redirect-login">
+                    <p>Already have an account? <a href="login.html">Login here</a></p>
+                </div>
             </div>
-            <h3>Secure your website</h3>
-            <p>Join us today to protect your website from OWASP vulnerabilities, malware, and phishing attacks.</p>
+
+            <!-- Right Side: Information Card -->
+            <div class="info-card">
+                <div class="vulscan-title">
+                    <h1><span>VulScan</span></h1>
+                </div>
+                <h3>Secure your website</h3>
+                <p>Join us today to protect your website from OWASP vulnerabilities, malware, and phishing attacks.</p>
+            </div>
         </div>
     </div>
 </body>
+
 </html>

@@ -7,73 +7,120 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    color: #4d4d4d;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: #0a0a0a;
+    background: linear-gradient(145deg, #000000, #1a1a1a);
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+    min-height: 100vh;
+}
+
+.header .title span,.info-card h1 span {
+    background-image: linear-gradient(45deg, #d0d6dd, #869fb5, #093762);
+    /* Gradient colors */
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    /* Makes the text itself transparent */
+    display: inline-block;
+}
+
+.main-box {
+    color: #ecf0f1;
+    text-align: center;
+    background-color: #000000;
+    overflow: hidden;
+    width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background: linear-gradient(45deg, #4CAF50, #8BC34A);
-    position: relative;
 }
-.header{
+
+.main-box ::before {
+    content: '';
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 20%;
+    height: 132%;
+    background: url('signupback.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.5;
+    /* Adjust opacity here */
+    z-index: -1;
+    /* Sends the pseudo-element behind the content */
+}
+
+/* Header */
+.header {
+    width: 100%;
+    height: 144px;
     top: 2%;
 }
-.header .title{
+
+.header .title {
     padding: 20px;
     width: 60%;
     position: relative;
-    left: 36%;
+    left: 26%;
     display: flex;
     flex-direction: row;
 }
+
 .header h2 {
-    font-size: 2.5rem;
-    color: #0b0b0b;
+    font-size: 4rem;
+    color: white;
     font-weight: 600;
 }
-.logo {
-    width: 60px;
-    height: 60px;
-    margin-left: 10px;
-    border-radius: 50%;
 
+.logo {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 50%;
 }
 
 .header span {
     color: #0b490d;
 }
 
-
 .signup-container {
     display: flex;
     justify-content: space-between;
     width: 80%;
-    height: 76%;
     max-width: 1000px;
-    background-color: #fff;
-    border-radius: 10px;
+    background-color: rgb(35, 55, 66);
+    border-radius: 20px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     animation: slideIn 1s ease-out;
-    margin: 20px;
+    margin: 100px 40px;
     position: absolute;
     top: 15%;
 }
 
 /* Left Side: Signup Form */
 .signup-form {
+    background-color: #000000;
+    border-radius: 20px;
+    /* Rounded corners */
+    border: 3px solid rgb(27, 58, 75);
+    /* Outer border */
+    box-shadow: inset 0 0 40px rgba(140, 159, 213, 0.7);
     width: 50%;
     height: 100%;
     padding: 40px;
     animation: fadeInLeft 1s ease-in;
+    margin: 40px;
 }
 
 h2 {
-    font-size: 28px;
-    color: #333;
+    font-size: 2rem;
+    color: white;
     margin-bottom: 20px;
     text-align: center;
     transition: transform 0.3s ease;
@@ -81,13 +128,13 @@ h2 {
 
 form label {
     font-size: 14px;
-    color: #333;
+    color: white;
     margin-bottom: 5px;
     display: block;
 }
 
 input {
-    width: 100%;
+    width: 80%;
     padding: 12px;
     margin-bottom: 15px;
     border: 1px solid #ddd;
@@ -97,24 +144,37 @@ input {
 }
 
 input:focus {
-    border-color: #4CAF50;
+    border-color: rgb(27, 58, 75);
     outline: none;
 }
 
 .submit-btn {
-    width: 100%;
-    padding: 15px;
-    background-color: #4CAF50;
-    color: white;
+    padding: 15px 30px;
+    font-size: 1.6em;
+    background: linear-gradient(135deg, #012036, #12263d);
+    /* Gradient background */
+    color: #fff;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 10px;
+    /* Rounded corners */
+    transition: all 0.3s ease;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin: 36px 20px;
+    box-shadow: inset 0px 0px 40px rgba(229, 230, 235, 0.3);
+    /* Inner shadow */
 }
 
-.submit-btn:hover {
-    background-color: #45a049;
+.submit-btn :hover {
+    background: linear-gradient(135deg, #012036, #214772);
+    /* Darker gradient on hover */
+    box-shadow: inset 0px 0px 8px rgba(150, 172, 210, 0.3), 0px 8px 15px rgba(229, 230, 235, 0.3);
+    /* Inner shadow + outer shadow on hover */
+    transform: translateY(-3px);
+}
+
+.submit-btn :active {
+    transform: translateY(1px);
+    /* Button slightly pressed effect */
 }
 
 /* Redirect to login section */
@@ -124,69 +184,90 @@ input:focus {
 }
 
 .redirect-login a {
-    color: #4CAF50;
+    color: rgb(73, 98, 112);
     text-decoration: none;
     font-weight: bold;
 }
 
 .redirect-login a:hover {
-    color: #45a049;
+    color: rgb(8, 38, 54);
 }
 
 /* Right Side: Information Card */
 .info-card {
+    height: 600px;
     width: 50%;
     padding: 40px;
-    background-color: #fafafa;
-    border-left: 1px solid #ddd;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    background-color: #000000; 
+    border-radius: 20px; /* Rounded corners */
+    border: 3px solid rgb(27, 58, 75); /* Outer border */
+    box-shadow: inset 0 0 30px rgba(140, 159, 213, 0.7);
     animation: fadeInRight 1s ease-in;
-    margin-top: 30px; /* Added margin to create space between the card and form */
+    margin: 40px;
+    /* Added margin to create space between the card and form */
 }
 
 .vulscan-title {
     font-size: 36px;
-    color: #4CAF50;
+    color: rgb(27, 58, 75);
     text-align: center;
     margin-bottom: 20px;
 }
 
 .info-card h3 {
-    font-size: 24px;
-    color: #333;
+    font-size: 2rem;
+    color: #fff;
     margin-bottom: 15px;
 }
 
 .info-card p {
-    font-size: 16px;
-    color: #555;
+    font-size: 1.2rem;
+    color: #fff;
     line-height: 1.6;
 }
 
 /* Animations */
 @keyframes slideIn {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(0); }
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 @keyframes fadeInLeft {
-    0% { opacity: 0; transform: translateX(-50px); }
-    100% { opacity: 1; transform: translateX(0); }
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @keyframes fadeInRight {
-    0% { opacity: 0; transform: translateX(50px); }
-    100% { opacity: 1; transform: translateX(0); }
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
 
-    .header .title{
+    .header .title {
         left: 20%;
     }
+
     .signup-container {
         flex-direction: column;
         width: 90%;
@@ -196,7 +277,8 @@ input:focus {
         background-color: rgb(221, 229, 217);
     }
 
-    .signup-form, .info-card {
+    .signup-form,
+    .info-card {
         width: 100%;
         height: 440px;
         border-radius: 10px;
