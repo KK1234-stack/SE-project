@@ -1,8 +1,99 @@
 /* General Styles */
 body {
+    font-family: 'Arial', sans-serif;
+    color: #4d4d4d;
+    line-height: 1.8;
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #f5f5f5;
+    padding: 0;
+    overflow-x: hidden;
+    background: #0a0a0a;
+    background: linear-gradient(145deg, #000000, #1a1a1a);
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+    min-height: 100vh;
+}
+.header h2 span,.about-section h3 span,.title span {
+    background-image: linear-gradient(45deg, #d0d6dd, #869fb5, #093762); /* Gradient colors */
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent; /* Makes the text itself transparent */
+    display: inline-block;
+}
+button {
+    padding: 10px 30px;
+    font-size: 1.6em;
+    background: linear-gradient(135deg, #012036, #12263d); /* Gradient background */
+    color: #fff;
+    border: none;
+    margin-top: 8px;
+    border-radius: 10px; /* Rounded corners */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: inset 0px 0px 40px rgba(229, 230, 235, 0.3); /* Inner shadow */
+}
+
+button:hover {
+    background: linear-gradient(135deg, #012036, #214772); /* Darker gradient on hover */
+    box-shadow: inset 0px 0px 8px rgba(150, 172, 210, 0.3), 0px 8px 15px rgba(229, 230, 235, 0.3); /* Inner shadow + outer shadow on hover */
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(1px); /* Button slightly pressed effect */
+}
+
+.outer-box{
+    position: relative;
+    color: #ecf0f1;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.outer-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('loginback.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.5; /* Adjust opacity here */
+    z-index: -1; /* Sends the pseudo-element behind the content */
+}
+/* logo */
+.logo {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    border-radius: 50%;
+    margin: 36px;
+}
+
+/* header */
+.header{
+    position: absolute;
+    width: 100%;
+    height: 16%;
+    color: white;
+}
+.header .title{
+    width: 60%;
+    position: relative;
+    left: 25%;
+    display: flex;
+    flex-direction: row;
+}
+.header h2 {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.middle{
+    height: 10%;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Main Container */
@@ -18,79 +109,36 @@ body {
 
 /* Left Section (Login Form) */
 .login-section {
-    width: 45%;
-    background: #fff;
-    padding: 40px;
+    width: 45%; 
+    background-color: #000000; 
+    border-radius: 20px; /* Rounded corners */
+    border: 3px solid rgb(27, 58, 75); /* Outer border */
+    box-shadow: inset 0 0 30px rgba(140, 159, 213, 0.7); 
+    color: white;
     padding-top: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
-
-.login-section h2 {
-    font-size: 2.5rem;
-    color: #333;
-    font-weight: 600;
-}
-
-.login-section span {
-    color: #00bcd4;
-}
-
-.header{
-    position: absolute;
-    width: 100%;
-    height: 16%;
-    background-color: #a2cad0;
-}
-.header .title{
-    width: 60%;
-    position: relative;
-    left: 25%;
-    display: flex;
-    flex-direction: row;
-}
-.header h2 {
-    font-size: 2.5rem;
-    color: #333;
-    font-weight: 600;
-}
-
-.header span {
-    color: #00bcd4;
-}
-
-.logo {
-    width: 60px;
-    height: 60px;
-    margin-right: 10px;
-    border-radius: 50%;
-    margin: 36px;
-}
-
-.middle{
-    height: 10%;
-    display: flex;
-    flex-direction: column;
-}
 .form-header {
-    font-size: 1.1rem;
-    color: #666;
+    font-size: 1.6rem;
 }
 
 .auth-form .form-group {
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .auth-form .form-group label {
-    font-size: 1rem;
-    color: #333;
+    font-size: 1.2rem;
 }
 
 .auth-form .form-group input {
-    width: 100%;
+    width: 80%;
     padding: 12px;
     font-size: 1rem;
     border: 1px solid #ddd;
@@ -98,60 +146,40 @@ body {
     margin-top: 8px;
 }
 
-.auth-form button {
-    width: 100%;
-    padding: 12px;
-    background-color: #00bcd4;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    cursor: pointer;
-}
-
-.auth-form button:hover {
-    background-color: #0097a7;
-}
-
 /* About Section */
 .about-section {
     width: 45%;
-    padding: 40px;
-    background: #eeeeee;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    background-color: #000000; 
+    border-radius: 20px; /* Rounded corners */
+    border: 3px solid rgb(27, 58, 75); /* Outer border */
+    box-shadow: inset 0 0 30px rgba(140, 159, 213, 0.7);
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .about-section h3 {
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 500;
-    color: #333;
+    color: #fff;
+    margin: 10px;
 }
 
 .about-section p {
-    font-size: 1rem;
-    color: #555;
+    font-size: 1.3rem;
+    color: #fff;
     margin-top: 15px;
 }
-
-.animated-button {
-    margin-top: 20px;
-    padding: 12px 30px;
-    background-color: #00bcd4;
+/* why title */
+.title{
     color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
+    font-size: 4rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-.animated-button:hover {
-    background-color: #0097a7;
-}
-
 /* Scrollable Content */
 .scrollable-content {
     margin-top: 40px;
@@ -175,11 +203,12 @@ body {
 }
 
 .card {
+    background-color: #000000;
+    border-radius: 20px; /* Rounded corners */
+    border: 3px solid rgb(27, 58, 75); /* Outer border */
+    box-shadow: inset 0 0 30px rgba(140, 159, 213, 0.7); 
     padding: 20px;
     padding-top: 5px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease, transform 0.6s ease;
@@ -187,12 +216,12 @@ body {
 
 .card h3 {
     font-size: 1.5rem;
-    color: #333;
+    color: white;
 }
 
 .card p {
     font-size: 1rem;
-    color: #555;
+    color: white;
 }
 
 /* Premium Section */
@@ -200,33 +229,30 @@ body {
     margin-top: 40px;
     text-align: center;
     padding: 40px;
-    background-color: #00bcd4;
+    background-color: rgb(10, 37, 52);
+    color: white;
+}
+.premium-section h3{
+    font-size: 2rem;
+    color: white;
+}
+.premium-section p {
+    font-size: 1.2rem;
     color: white;
 }
 
 .premium-card {
-    background-color: #0097a7;
+    background-color: #000000; 
+    border-radius: 20px; /* Rounded corners */
+    border: 3px solid rgb(27, 58, 75); /* Outer border */
+    box-shadow: inset 0 0 30px rgba(140, 159, 213, 0.7); 
     padding: 40px;
     border-radius: 10px;
 }
 
-.premium-btn {
-    padding: 12px 30px;
-    background-color: #4CAF50;
-    color: white;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.premium-btn:hover {
-    background-color: #45a049;
-}
-
 /* Footer */
 .footer {
-    background-color: #333;
+    background-color: #000000;
     padding: 20px;
     color: white;
     text-align: center;
@@ -239,9 +265,19 @@ body {
 }
 
 .socials a:hover {
-    color: #00bcd4;
+    color: rgb(27, 58, 75) ;
 }
+footer img{
+    height: 50px;
+    width: 50px;
+}
+.image-container {
+    display: inline-block;
+    background-color: white;
+    height: 50px;
+    border-radius: 100px;
 
+  }
 /* Scroll Animation */
 .fade-in {
     opacity: 0;
@@ -271,7 +307,7 @@ body {
     opacity: 1;
 }
 /* responsive design */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .header{
         position:sticky;
     }
@@ -328,4 +364,4 @@ body {
     .scrollable-content{
         top: 100%;
     }
-}
+} */

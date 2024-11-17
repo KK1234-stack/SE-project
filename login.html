@@ -11,93 +11,102 @@
 </head>
 
 <body>
-    <div class="header">
-        <div class="title">
-            <h2>Welcome Back to <span>VulScan</span></h2>
-            <img src="vulscanlogo.png" alt="vulscan" class="logo">
+    <div class="outer-box">
+        <div class="header">
+            <div class="title">
+                <img src="weblogo.jpg" alt="vulscan" class="logo">
+                <h2>Welcome Back to <span>VulScan</span></h2>
+            </div>
+        </div>
+        <div class="middle">
+            <div class="main-container">
+
+                <!-- Left Section: Login Form -->
+                <div class="login-section fade-in">
+                    <p class="form-header">Please login to continue</p>
+
+                    <form id="login-form" class="auth-form" method="POST" action="login.php">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" placeholder="Enter your password"
+                                required>
+                        </div>
+                        <button type="submit">Login</button>
+                        <p class="toggle-to-signup">Don't have an account? <a href="signup.html">Sign up</a></p>
+                    </form>
+                </div>
+
+                <!-- Right Section: About VulScan -->
+                <div class="about-section fade-in">
+                    <h3>About <span>VulScan</span></h3>
+                    <p>Protect your website from vulnerabilities, phishing, and malware with VulScan’s powerful scanning
+                        tools. Stay secure and keep your site safe from threats.</p>
+                    <p>Our platform helps you scan your website, identify security flaws, and provide actionable
+                        insights to
+                        mitigate risks.</p>
+                    <button class="animated-button" onclick="window.location.href='about.html'">Learn More</button>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="middle">
-        <div class="main-container">
-
-            <!-- Left Section: Login Form -->
-            <div class="login-section fade-in">
-                <p class="form-header">Please login to continue</p>
-
-                <form id="login-form" class="auth-form" method="POST" action="login.php">
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" id="username" name="username" placeholder="Enter your username" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                    </div>
-                    <button type="submit">Login</button>
-                    <p class="toggle-to-signup">Don't have an account? <a href="signup.html">Sign up</a></p>
-                </form>
+    <div class="title">
+        <p>Why <Span>VulScan</Span> ?</p>
+    </div>
+    <!-- Scrollable Info Section -->
+    <section class="scrollable-content">
+        <div class="cards-container">
+            <!-- Left Side Cards -->
+            <div class="cards left-cards">
+                <div class="card fade-in slide-in-left">
+                    <h3>Why Scan for Vulnerabilities?</h3>
+                    <p>Vulnerabilities can expose sensitive data to attackers. Regular scans help prevent data
+                        breaches and improve your website's security posture.</p>
+                </div>
+                <div class="card fade-in slide-in-left">
+                    <h3>OWASP Top 10 Vulnerabilities</h3>
+                    <p>Stay ahead of threats. The OWASP Top 10 highlights the most critical vulnerabilities that
+                        could compromise your site.</p>
+                </div>
             </div>
 
-            <!-- Right Section: About VulScan -->
-            <div class="about-section fade-in">
-                <h3>About VulScan</h3>
-                <p>Protect your website from vulnerabilities, phishing, and malware with VulScan’s powerful scanning
-                    tools. Stay secure and keep your site safe from threats.</p>
-                <p>Our platform helps you scan your website, identify security flaws, and provide actionable insights to
-                    mitigate risks.</p>
-                <button class="animated-button" onclick="window.location.href='about.html'">Learn More</button>
+            <!-- Right Side Cards -->
+            <div class="cards right-cards">
+                <div class="card fade-in slide-in-right">
+                    <h3>Phishing Protection</h3>
+                    <p>Phishing attacks are on the rise. VulScan helps detect and protect against fraudulent
+                        websites trying to steal your data.</p>
+                </div>
+                <div class="card fade-in slide-in-right">
+                    <h3>Malware Detection</h3>
+                    <p>Our tools help you identify and eliminate malware that might be hiding in your website’s code
+                        or on your server.</p>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Scrollable Info Section -->
-        <section class="scrollable-content">
-            <div class="cards-container">
-                <!-- Left Side Cards -->
-                <div class="cards left-cards">
-                    <div class="card fade-in slide-in-left">
-                        <h3>Why Scan for Vulnerabilities?</h3>
-                        <p>Vulnerabilities can expose sensitive data to attackers. Regular scans help prevent data
-                            breaches and improve your website's security posture.</p>
-                    </div>
-                    <div class="card fade-in slide-in-left">
-                        <h3>OWASP Top 10 Vulnerabilities</h3>
-                        <p>Stay ahead of threats. The OWASP Top 10 highlights the most critical vulnerabilities that
-                            could compromise your site.</p>
-                    </div>
-                </div>
-
-                <!-- Right Side Cards -->
-                <div class="cards right-cards">
-                    <div class="card fade-in slide-in-right">
-                        <h3>Phishing Protection</h3>
-                        <p>Phishing attacks are on the rise. VulScan helps detect and protect against fraudulent
-                            websites trying to steal your data.</p>
-                    </div>
-                    <div class="card fade-in slide-in-right">
-                        <h3>Malware Detection</h3>
-                        <p>Our tools help you identify and eliminate malware that might be hiding in your website’s code
-                            or on your server.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Premium Section -->
-        <section class="premium-section fade-in">
-            <div class="premium-card">
-                <h3>Upgrade to Premium</h3>
-                <p>Unlock advanced vulnerability scanning, priority support, and more detailed reports with VulScan
-                    Premium.</p>
-                <button class="premium-btn">Go Premium</button>
-            </div>
-        </section>
+    <!-- Premium Section -->
+    <section class="premium-section fade-in">
+        <div class="premium-card">
+            <h3>Upgrade to Premium</h3>
+            <p>Unlock advanced vulnerability scanning, priority support, and more detailed reports with VulScan
+                Premium.</p>
+            <button class="premium-btn">Go Premium</button>
+        </div>
+    </section>
     </div>
     <!-- Footer with Social Media Links -->
     <footer class="footer">
         <div class="socials">
-            <a href="https://facebook.com" target="_blank"><img src="facebook-icon.png" alt="Facebook"></a>
-            <a href="https://twitter.com" target="_blank"><img src="twitter-icon.png" alt="Twitter"></a>
-            <a href="https://linkedin.com" target="_blank"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+            <a href="https://facebook.com" target="_blank"><img src="facebook.png" alt="Facebook"></a>
+            <a href="https://twitter.com" target="_blank"><img src="twitter.png" alt="Twitter"></a>
+            <a class="linkedin-img" href="https://linkedin.com" target="_blank"><div class="image-container">
+                <img src="linkedln.png" alt="Logo">
+              </div></a>
         </div>
         <p>&copy; 2024 VulScan. All rights reserved.</p>
     </footer>
