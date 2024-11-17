@@ -2,18 +2,83 @@
 body {
     font-family: 'Arial', sans-serif;
     color: #4d4d4d;
-    background-color: #f7f8fa;
     line-height: 1.8;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    background: #0a0a0a;
+    background: linear-gradient(145deg, #000000, #1a1a1a);
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+    min-height: 100vh;
+}
+span {
+    background-image: linear-gradient(45deg, #d0d6dd, #869fb5, #093762); /* Gradient colors */
+    background-clip: text;
+-webkit-background-clip: text;
+    color: transparent; /* Makes the text itself transparent */
+    display: inline-block;
 }
 
 header {
-    background-color: #2c3e50;
-    color: #ecf0f1;
-    padding: 60px 20px;
-    text-align: center;
     position: relative;
+    color: #ecf0f1;
+    text-align: center;
+    background-color: #2c3e50;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('background.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.5; /* Adjust opacity here */
+    z-index: -1; /* Sends the pseudo-element behind the content */
+}
+.navigation {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation a {
+    color: #ecf0f1;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.6em;
+}
+
+.navigation a:hover {
+    color: #e67e22;
+}
+
+.logo-box{
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+}
+.logo {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 50%;
+}
+.links{
+    height: 100px;
+    width: 640px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.links button{
+    font-size: large;
 }
 
 .logo-container {
@@ -21,83 +86,135 @@ header {
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
-}
-
-.logo {
-    width: 90px;
-    height: 90px;
-    margin-right: 10px;
-    border-radius: 50%;
-}
-
-.navigation {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-}
-
-.navigation a {
-    color: #ecf0f1;
-    margin: 0 15px;
-    text-decoration: none;
-    font-size: 1.1em;
-}
-
-.navigation a:hover {
-    color: #e67e22;
+    font-size: 30px;
 }
 
 header h1 {
     font-size: 3em;
 }
 
-header h1 span {
-    color: #e67e22;
-}
-
 header p {
-    font-size: 1.2em;
+    font-size: 2em;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
+/* Dropdown Styling */
+.dropdown {
+    display: inline-block;
+    position: relative; 
+    border-radius: 10px;
+}
+
+.dropbtn {
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 15px; /* Adjusted padding for a smaller button */
+    font-size: 14px; /* Smaller font size */
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.dropdown-content {
+    display: none;
+    border-radius: 10px;
+    position: absolute;
+    background-color: #3c4853;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 200px; /* Fixed width to prevent overflow */
+    right: 0; /* Aligns the dropdown content to the right edge of the button */
+}
+.dropdown-content a {
+    color: rgb(252, 250, 250);
+    padding: 10px; /* Adjusted padding for a smaller text area */
+    text-decoration: none;
+    display: block;
+    font-size: 14px; /* Smaller font size for dropdown items */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Horizontal line */
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none; /* Removes the line from the last item */
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* BUTTONS */
 .button-group {
     display: flex;
+    flex-direction: row;
     gap: 20px;
     justify-content: center;
-    margin-top: 30px;
+    margin: 30px;
 }
-
+.but1, .but2, .but3 {
+    background-color: #000000; /* Black background */
+    /* height: 640px; */
+    width: 360px;
+    border-radius: 20px; /* Rounded corners */
+    border: 3px solid rgb(27, 58, 75); /* Outer border */
+    box-shadow: inset 0 0 30px rgba(140, 159, 213, 0.7); 
+}
+.but1 img,.but2 img,.but3 img{
+    height: 200px;
+    width: 200px;
+    margin-top: 50px;
+    border-radius: 20px;
+}
+.but1 p,.but2 p,.but3 p {
+    font-size: 1.6rem;
+    display: inline-block;
+    height: 160px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 .animated-button {
     padding: 15px 30px;
-    font-size: 1.1em;
-    background-color: #e67e22;
+    font-size: 1.6em;
+    background: linear-gradient(135deg, #012036, #12263d); /* Gradient background */
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px; /* Rounded corners */
     transition: all 0.3s ease;
     cursor: pointer;
+    margin: 36px 20px;
+    box-shadow: inset 0px 0px 40px rgba(229, 230, 235, 0.3); /* Inner shadow */
 }
 
 .animated-button:hover {
-    background-color: #d35400;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #012036, #214772); /* Darker gradient on hover */
+    box-shadow: inset 0px 0px 8px rgba(150, 172, 210, 0.3), 0px 8px 15px rgba(229, 230, 235, 0.3); /* Inner shadow + outer shadow on hover */
     transform: translateY(-3px);
+}
+
+.animated-button:active {
+    transform: translateY(1px); /* Button slightly pressed effect */
 }
 
 /* Section Styling */
 .scroll-section {
-    padding: 80px 20px;
+    padding: 0px 60px;
     text-align: center;
 }
 
 .scroll-section h2 {
-    font-size: 2.5em;
+    font-size: 4em;
     margin-bottom: 40px;
 }
-
 .card {
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #000000;
+    color: white;
+    border-radius: 20px; /* Rounded corners */
+    border: 3px solid rgb(27, 58, 75); /* Outer border */
+    box-shadow: inset 0 0 20px rgba(140, 159, 213, 0.7); 
     padding: 20px;
     margin: 20px auto;
     max-width: 800px;
@@ -109,63 +226,30 @@ header p {
 }
 
 .center-button {
-    margin: 40px 0;
-}
-
-/* Dropdown Styling */
-.dropdown {
-    display: inline-block;
-    position: relative; /* Adjusted for proper positioning */
-}
-
-.dropbtn {
-    background-color: #2c3e50;
-    color: white;
-    padding: 10px 15px; /* Adjusted padding for a smaller button */
-    font-size: 14px; /* Smaller font size */
-    border: none;
-    cursor: pointer;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    z-index: 1;
-    width: 200px; /* Fixed width to prevent overflow */
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 10px; /* Adjusted padding for a smaller text area */
-    text-decoration: none;
-    display: block;
-    font-size: 14px; /* Smaller font size for dropdown items */
-}
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
+    margin: 20px 0;
 }
 
 /* Footer Styling */
 footer {
-    background-color: #2c3e50;
+    background-color: #000000;
     color: #ecf0f1;
     text-align: center;
     padding: 20px;
     position: relative;
     bottom: 0;
     width: 100%;
+    font-size: 1.3rem;
 }
 
 footer a {
-    color: #e67e22;
+    /* color: #e67e22; */
     text-decoration: none;
+    background-image: linear-gradient(45deg, #d0d6dd, #869fb5, #2570b6); /* Gradient colors */
+    background-clip: text;
+-webkit-background-clip: text;
+    color: transparent; /* Makes the text itself transparent */
+    display: inline-block;
+    font-size: 1.2rem;
 }
 
 footer a:hover {
