@@ -93,6 +93,38 @@ button:active {
             font-size: 18px;
             font-weight: bold;
         }
+        /* Responsive Design for Mobile and Tablet Devices */
+@media (max-width: 768px) {
+
+    /* Container */
+    .container {
+        width: 80%; /* Make the container take most of the screen width */
+        padding: 15px;
+        top: 200px; /* Reduce vertical offset */
+        border-radius: 10px; /* Slightly less rounded corners for mobile aesthetics */
+    }
+
+    /* Input Field */
+    input[type="url"] {
+        width: 80%; /* Full width for small screens */
+        height: 30px; 
+        font-size: 16px;
+    }
+
+    /* Button */
+    button {
+        font-size: 1.4em; /* Slightly smaller text size */
+        padding: 10px 20px; /* Adjust padding for smaller screens */
+        margin: 20px 0;
+    }
+
+    /* Result Section */
+    .result {
+        font-size: 16px; /* Slightly smaller font size */
+        margin-top: 15px;
+    }
+}
+
     </style>
 </head>
 
