@@ -307,61 +307,78 @@ footer img{
     opacity: 1;
 }
 /* responsive design */
-/* @media (max-width: 768px) {
-    .header{
-        position:sticky;
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    /* Header */
+    .header {
+        position: sticky;
+        top: 0;
+        z-index: 1000; /* Ensures it stays on top */
+        padding: 10px;
     }
     .header h2 {
-        font-size: 1.6rem;
+        font-size: 3rem;
     }
-    .header .title{
-        height: 50%;
-        left: 10%;
-        width: 80%;
+    .header .title {
+        flex-direction: column; /* Stack the elements */
+        width: 100%;
+        text-align: center;
+        left: 0;
     }
     .logo {
-        margin-top: 20px;
+        margin: 0 auto 10px; /* Center the logo */
     }
-    
-    .header span {
-        color: #00bcd4;
+    /* Main Container */
+    .main-container {
+        height: auto;
+        flex-direction: column; /* Stack sections vertically */
+        padding: 10px;
     }
-    .main-container{
-        flex-direction: column;
+
+    /* Login Section */
+    .login-section {
+        width: 90%; /* Full-width on smaller screens */
+        margin: 10px auto; /* Center the section */
+        height: auto;
     }
-    .login-section{
-        width: 80%;
-        height: 50%;
+
+    /* About Section */
+    .about-section {
+        width: 84%;
+        margin: 10px auto;
+        height: auto;
+        padding: 15px;
     }
-    .about-section{
-        width: 80%;
-        height: 50%;
-        padding: 20px;
-        padding-top: 0px;
-        padding-bottom: 20px;
+
+    /* Cards Section */
+    .cards-container {
+        flex-direction: column; /* Stack cards vertically */
+        gap: 15px;
     }
-    .about-section h3 {
-        height: 20px;
+    .cards {
+        width: 100%;
     }
-    
-    .about-section p {
-        font-size: 1rem;
-        color: #555;
-        margin-top: 0px;
+
+    /* Scrollable Content */
+    .scrollable-content {
+        margin: 0;
+        padding: 10px;
     }
-    
-    .animated-button {
-        margin-top: 0px;
-        padding: 12px 30px;
+
+    /* Button */
+    button {
+        font-size: 1.2em; /* Slightly smaller buttons */
+        padding: 10px 20px;
+    }
+
+    /* Footer */
+    .footer {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    .footer img {
         height: 40px;
+        width: 40px;
     }
-    .cards-container{
-        justify-content: center;
-    }
-    .cards{
-        width: 80%;
-    }
-    .scrollable-content{
-        top: 100%;
-    }
-} */
+}
+
