@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Website</title>
+</head>
+<body>
+    <h1>Safe Website</h1>
+
+    <form action="/submit" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required />
+        <input type="submit" value="Submit" />
+    </form>
+
+    <form action="/greet" method="POST">
+        <label for="name">Your Name:</label>
+        <input type="text" name="name" id="name" required />
+        <input type="submit" value="Greet Me" />
+    </form>
+
+    <form action="/transfer" method="POST">
+        <label for="amount">Transfer Amount:</label>
+        <input type="number" name="amount" id="amount" required />
+        <input type="submit" value="Transfer" />
+    </form>
+</body>
+</html>

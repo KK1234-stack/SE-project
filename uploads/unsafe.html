@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulnerable Website</title>
+</head>
+<body>
+    <h1>Vulnerable Website</h1>
+
+    <!-- SQL Injection vulnerability -->
+    <form action="/submit" method="POST">
+        <label for="username">Username (SQL Injection):</label>
+        <input type="text" name="username" id="username" required />
+        <input type="submit" value="Submit" />
+    </form>
+
+    <!-- XSS vulnerability -->
+    <form action="/greet" method="POST">
+        <label for="name">Your Name (XSS Vulnerability):</label>
+        <input type="text" name="name" id="name" required />
+        <input type="submit" value="Greet Me" />
+    </form>
+
+    <!-- CSRF vulnerability -->
+    <form action="/transfer" method="POST">
+        <label for="amount">Transfer Amount (CSRF Vulnerability):</label>
+        <input type="number" name="amount" id="amount" required />
+        <input type="submit" value="Transfer" />
+    </form>
+</body>
+</html>
