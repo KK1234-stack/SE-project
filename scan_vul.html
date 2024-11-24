@@ -3,15 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vulnerable Website Scanning</title>
-    <link rel="stylesheet" href="scan_vul.css">  <!-- Optional CSS -->
+    <title>Website Vulnerability Scanner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin: 10px 0 5px;
+        }
+        input, select, button {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #scan-results {
+            margin-top: 30px;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        #scan-results ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #scan-results li {
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Vulnerable Website Scanning</h1>
-        <form id="scan-form" enctype="multipart/form-data">
-            <label for="file">Upload Website Source Code (.html, .js, .php):</label>
+        <h1>Website Vulnerability Scanner</h1>
+        <form id="scan-form">
+            <label for="file">Upload Website File (HTML, JS, PHP):</label>
             <input type="file" id="file" name="file" accept=".html,.js,.php" required>
 
             <label for="vulnerability">Select Vulnerability Type:</label>
@@ -19,30 +73,28 @@
                 <option value="sql_injection">SQL Injection</option>
                 <option value="xss">Cross-Site Scripting (XSS)</option>
                 <option value="csrf">Cross-Site Request Forgery (CSRF)</option>
-                <option value="file_inclusion">File Inclusion</option>
-                <option value="command_injection">Command Injection</option>
             </select>
 
-            <button type="submit">Scan for Vulnerability</button>
+            <button type="submit">Scan</button>
         </form>
 
         <div id="scan-results">
-            <!-- Results will be displayed here -->
+            <!-- Scan results will be displayed here -->
         </div>
     </div>
 
     <script>
         document.getElementById('scan-form').addEventListener('submit', function(event) {
             event.preventDefault();
-
+    
             const formData = new FormData();
             const fileInput = document.getElementById('file');
             const vulnerabilityType = document.getElementById('vulnerability').value;
-            
+    
             formData.append('file', fileInput.files[0]);
             formData.append('vulnerability', vulnerabilityType);
-
-            // Send the request to the backend (Flask) running on port 5001
+    
+            // Make the API call to Flask backend
             fetch('http://localhost:5001/scan-vulnerability', {
                 method: 'POST',
                 body: formData
@@ -50,7 +102,32 @@
             .then(response => response.json())
             .then(data => {
                 const resultDiv = document.getElementById('scan-results');
-                resultDiv.innerHTML = `<p><strong>Scan Results:</strong></p><pre>${JSON.stringify(data, null, 2)}</pre>`;
+                resultDiv.innerHTML = ''; // Clear previous results
+    
+                // Display the results from the backend
+                if (data.error) {
+                    console.error('Error during scan:', data.error); // Log the error to the console
+                    resultDiv.innerHTML = `<p>An error occurred: ${data.error}</p>`;
+                } else {
+                    if (data.issues_found.length > 0) {
+                        resultDiv.innerHTML = `
+                            <p><strong>Vulnerability Type:</strong> ${data.vulnerability}</p>
+                            <p><strong>File Scanned:</strong> ${data.file}</p>
+                            <p><strong>Status:</strong> ${data.status}</p>
+                            <p><strong>Issues Found:</strong></p>
+                            <ul>
+                                ${data.issues_found.map(issue => `<li>${issue}</li>`).join('')}
+                            </ul>
+                        `;
+                    } else {
+                        resultDiv.innerHTML = `
+                            <p><strong>Vulnerability Type:</strong> ${data.vulnerability}</p>
+                            <p><strong>File Scanned:</strong> ${data.file}</p>
+                            <p><strong>Status:</strong> ${data.status}</p>
+                            <p>No issues detected.</p>
+                        `;
+                    }
+                }
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -58,6 +135,7 @@
             });
         });
     </script>
+    
 
 </body>
 </html>
