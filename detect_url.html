@@ -55,7 +55,6 @@
             padding: 20px;
             position: relative;
             top: 100px;
-
         }
 
         input[type="url"] {
@@ -66,65 +65,67 @@
             border: 1px solid #ccc;
             border-radius: 10px;
         }
+
         button {
-    padding: 15px 30px;
-    font-size: 1.6em;
-    background: linear-gradient(135deg, #012036, #12263d); /* Gradient background */
-    color: #fff;
-    border: none;
-    border-radius: 10px; /* Rounded corners */
-    transition: all 0.3s ease;
-    cursor: pointer;
-    margin: 36px 20px;
-    box-shadow: inset 0px 0px 40px rgba(229, 230, 235, 0.3); /* Inner shadow */
-}
+            padding: 15px 30px;
+            font-size: 1.6em;
+            background: linear-gradient(135deg, #012036, #12263d); /* Gradient background */
+            color: #fff;
+            border: none;
+            border-radius: 10px; /* Rounded corners */
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin: 36px 20px;
+            box-shadow: inset 0px 0px 40px rgba(229, 230, 235, 0.3); /* Inner shadow */
+        }
 
-button:hover {
-    background: linear-gradient(135deg, #012036, #214772); /* Darker gradient on hover */
-    box-shadow: inset 0px 0px 8px rgba(150, 172, 210, 0.3), 0px 8px 15px rgba(229, 230, 235, 0.3); /* Inner shadow + outer shadow on hover */
-    transform: translateY(-3px);
-}
+        button:hover {
+            background: linear-gradient(135deg, #012036, #214772); /* Darker gradient on hover */
+            box-shadow: inset 0px 0px 8px rgba(150, 172, 210, 0.3), 0px 8px 15px rgba(229, 230, 235, 0.3); /* Inner shadow + outer shadow on hover */
+            transform: translateY(-3px);
+        }
 
-button:active {
-    transform: translateY(1px); /* Button slightly pressed effect */
-}
+        button:active {
+            transform: translateY(1px); /* Button slightly pressed effect */
+        }
+
         .result {
             margin-top: 20px;
             font-size: 18px;
             font-weight: bold;
         }
+
         /* Responsive Design for Mobile and Tablet Devices */
-@media (max-width: 768px) {
+        @media (max-width: 768px) {
 
-    /* Container */
-    .container {
-        width: 80%; /* Make the container take most of the screen width */
-        padding: 15px;
-        top: 200px; /* Reduce vertical offset */
-        border-radius: 10px; /* Slightly less rounded corners for mobile aesthetics */
-    }
+            /* Container */
+            .container {
+                width: 80%; /* Make the container take most of the screen width */
+                padding: 15px;
+                top: 200px; /* Reduce vertical offset */
+                border-radius: 10px; /* Slightly less rounded corners for mobile aesthetics */
+            }
 
-    /* Input Field */
-    input[type="url"] {
-        width: 80%; /* Full width for small screens */
-        height: 30px; 
-        font-size: 16px;
-    }
+            /* Input Field */
+            input[type="url"] {
+                width: 80%; /* Full width for small screens */
+                height: 30px;
+                font-size: 16px;
+            }
 
-    /* Button */
-    button {
-        font-size: 1.4em; /* Slightly smaller text size */
-        padding: 10px 20px; /* Adjust padding for smaller screens */
-        margin: 20px 0;
-    }
+            /* Button */
+            button {
+                font-size: 1.4em; /* Slightly smaller text size */
+                padding: 10px 20px; /* Adjust padding for smaller screens */
+                margin: 20px 0;
+            }
 
-    /* Result Section */
-    .result {
-        font-size: 16px; /* Slightly smaller font size */
-        margin-top: 15px;
-    }
-}
-
+            /* Result Section */
+            .result {
+                font-size: 16px; /* Slightly smaller font size */
+                margin-top: 15px;
+            }
+        }
     </style>
 </head>
 
@@ -138,6 +139,7 @@ button:active {
             <div id="result" class="result"></div>
         </div>
     </div>
+
     <script>
         function checkURL() {
             const url = document.getElementById("url-input").value;
@@ -145,6 +147,13 @@ button:active {
             // Ensure the URL is not empty
             if (!url) {
                 document.getElementById("result").innerText = "Please enter a valid URL.";
+                return;
+            }
+
+            // Validate URL format
+            const urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
+            if (!urlPattern.test(url)) {
+                document.getElementById("result").innerText = "Please enter a valid URL (e.g., https://www.example.com).";
                 return;
             }
 
@@ -165,7 +174,7 @@ button:active {
                 .then(data => {
                     // Display the result from the API response
                     const prediction = data.prediction;
-                    const resultText = (prediction === 1) ? "This URL is malicious!" : "This URL is safe.";
+                    const resultText = (prediction === "Malicious") ? "This URL is malicious!" : "This URL is safe.";
                     document.getElementById("result").innerText = resultText;
                 })
                 .catch(error => {
