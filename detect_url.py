@@ -11,7 +11,7 @@ CORS(app, resources={r"/predict": {"origins": "http://localhost:8000"}})
 
 # Load the model and vectorizer
 model = joblib.load('url_classifier_model.pkl')
-vectorizer = joblib.load('vectorizer.pkl')
+vectorizer = joblib.load('url_vectorizer.pkl')
 
 # Hardcoded good and bad websites
 hardcoded_good_urls = [
