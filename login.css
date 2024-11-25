@@ -125,6 +125,22 @@ button:active {
     font-size: 1.6rem;
 }
 
+.navigation .logout {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #ff5757;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navigation .logout:hover {
+    background-color: #d94545;
+    transform: scale(1.05);
+}
+
+
 .auth-form .form-group {
     margin-bottom: 20px;
     display: flex;
